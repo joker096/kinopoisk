@@ -8,22 +8,22 @@
 
 1. Установите необходимые зависимости, выполнив следующую команду:
 
-```bash
+```
 pip install streamlit streamlit_option_menu
-
+```
 2. Склонируйте репозиторий:
 
-```bash
+```
 git clone https://github.com/<ваш-логин>/MovieApp.git
 cd MovieApp
-
+```
 3. Использование:
 
 Запустите приложение, введя следующую команду:
 
-```bash
+```
 streamlit run app.py
-
+```
 4. Структура проекта:
 
 app.py: Основной код приложения.
