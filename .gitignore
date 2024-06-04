@@ -1,0 +1,10 @@
+config.py
+config.ini
+config.toml
+secrets.toml
+.env
+__pycache__/
+cvrname-seo-1f1dccd4fb96.json
+cvrname-seo-970cd6bb6ee6.json
+config.toml
+api_keys.txt
