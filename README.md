@@ -17,14 +17,22 @@ pip install streamlit streamlit_option_menu
 git clone https://github.com/<ваш-логин>/MovieApp.git
 cd MovieApp
 ```
-3. Использование:
+
+3. Создайте виртуальную среду и активируйте ее:
+```
+python -m venv .venv
+.\.venv\Scripts\activate  # Для Windows
+source .venv/bin/activate  # Для MacOS/Linux
+```
+
+4. Использование:
 
 Запустите приложение, введя следующую команду:
 
 ```
 streamlit run app.py
 ```
-4. Структура проекта:
+5. Структура проекта:
 
 app.py: Основной код приложения.
 movies.json: JSON файл с данными о фильмах.
