@@ -39,3 +39,5 @@ movies.json: JSON файл с данными о фильмах.
 series.json, cartoons.json, anime.json: Дополнительные JSON файлы с данными о сериалах, мультфильмах и аниме соответственно.
 screenshot.png: Скриншот приложения для демонстрации.
 kinopoisk_url_to_json.py - вспомогательный скрипт, позволяющий получить данные из Кинопоиска по id фильмам в json формат.
+
+demo: https://kinopoisk.streamlit.app/
