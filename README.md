@@ -8,7 +8,7 @@
 
 1. Установите необходимые зависимости, выполнив следующую команду:
 
-pip install streamlit streamlit_option_menu streamlit_pagination
+pip install streamlit streamlit_option_menu
 
 2. Склонируйте репозиторий:
 
