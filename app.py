@@ -41,10 +41,11 @@ class MovieApp:
                                     str(f'Год: {movie['year']}') + ' \/ ' + 
                                     str(f'Рейтинг: {movie['rating']}') + ' \/ ' + 
                                     str(f'Страна: {movie['country']}') + ' \/ ' +                                     
-                                    str(f'Продолжительность: {movie['duration']}') + ' \/ ' + 
+                                    str(f'Продолжительность: {movie['duration']}') + ' ' + ' ' + 'мин.' + ' \/ ' + 
                                     str(f'Бюджет: {movie['budget']}') + '\n\n' +
                                     movie['genres'] + '\n\n' + 
-                                    movie['actors']
+                                    str(f'Актёры: {movie['actors']}') + '\n\n' + 
+                                    str(f'Режиссёр: {movie['directors']}')
                                 ),
                                 unsafe_allow_html=True
                             )

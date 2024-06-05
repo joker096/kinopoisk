@@ -26,7 +26,8 @@ def get_movie_details(movie_id):
         year = data.get('year', 'N/A')
         genres = ', '.join([genre['name'] for genre in data.get('genres', [])])
         rating = data.get('rating', {}).get('kp', 'N/A')
-        actors = ', '.join([person['name'] for person in data.get('persons', []) if person['profession'] == 'актёр'])
+        actors = ', '.join([person['name'] for person in data.get('persons', []) if person['profession'] in ['актеры', 'actor']])
+        directors = ', '.join([person['name'] for person in data.get('persons', []) if person['profession'] in ['режиссеры', 'director']])
         country = ', '.join([country['name'] for country in data.get('countries', [])])
         duration = data.get('movieLength', 'N/A')
         budget = data.get('budget', {}).get('value', 'N/A')
@@ -40,6 +41,7 @@ def get_movie_details(movie_id):
             "genres": genres,
             "rating": rating,
             "actors": actors,
+            "directors": directors,
             "country": country,
             "duration": duration,
             "budget": budget
@@ -58,17 +60,7 @@ def get_movies_details(movie_ids):
     return movies_details
 
 if __name__ == "__main__":
-    movie_ids = [
-        "749374",        
-        "406148",        
-        "942544",        
-        "257376",        
-        "1071383",        
-        "2000102",        
-        "1381527",        
-        "2040161",        
-        "382731"
-    ]
+    movie_ids = ['404900', '253245', '749374', '1227803', '502838', '685246', '4445150', '460586', '406148', '257376', '591929', '5378717', '915196', '1394131', '1197956', '681831', '4867607', '1032606']
     
     movies_details = get_movies_details(movie_ids)
     
