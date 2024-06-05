@@ -5,7 +5,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/4716873/893bba73-3105-4944-8d18-a38f929f2759/orig",
         "id": "775276",
         "year": 2016,
-        "genres": "мультфильм, комедия, криминал, детектив, приключения, семейный, боевик"
+        "genres": "мультфильм, комедия, криминал, детектив, приключения, семейный, боевик",
+        "rating": 8.314,
+        "actors": "",
+        "country": "США",
+        "duration": 108,
+        "budget": 150000000
     },
     {
         "name": "Рик и Морти",
@@ -13,7 +18,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/10835644/9a7203bd-7f9d-4f45-bc39-cdf7d4156332/orig",
         "id": "685246",
         "year": 2013,
-        "genres": "мультфильм, комедия, фантастика, приключения"
+        "genres": "мультфильм, комедия, фантастика, приключения",
+        "rating": 8.961,
+        "actors": "",
+        "country": "США",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "Ну, погоди!",
@@ -21,7 +31,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1599028/a68f7c1a-fb83-4533-a4e2-f60485f2f440/orig",
         "id": "46483",
         "year": 1969,
-        "genres": "мультфильм, комедия, приключения, детский"
+        "genres": "мультфильм, комедия, приключения, детский",
+        "rating": 8.713,
+        "actors": "",
+        "country": "СССР",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "ВАЛЛ·И",
@@ -29,7 +44,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1946459/146b1b20-347b-4b6a-98c8-fdc2c75495cb/orig",
         "id": "279102",
         "year": 2008,
-        "genres": "мультфильм, фантастика, приключения, семейный"
+        "genres": "мультфильм, фантастика, приключения, семейный",
+        "rating": 8.364,
+        "actors": "",
+        "country": "США",
+        "duration": 98,
+        "budget": 180000000
     },
     {
         "name": "Жил-был пёс",
@@ -37,7 +57,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/4303601/03c5124a-e59a-474b-8dc9-6227db156566/orig",
         "id": "45319",
         "year": 1982,
-        "genres": "мультфильм, комедия, короткометражка, семейный"
+        "genres": "мультфильм, комедия, короткометражка, семейный",
+        "rating": 9.196,
+        "actors": "",
+        "country": "СССР",
+        "duration": 10,
+        "budget": "N/A"
     },
     {
         "name": "Душа",
@@ -45,7 +70,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/4774061/ce2e470c-861c-4995-b6b1-54e1dd4932d4/orig",
         "id": "775273",
         "year": 2020,
-        "genres": "мультфильм, фэнтези, комедия, приключения, семейный, музыка"
+        "genres": "мультфильм, фэнтези, комедия, приключения, семейный, музыка",
+        "rating": 8.361,
+        "actors": "",
+        "country": "США",
+        "duration": 106,
+        "budget": 150000000
     },
     {
         "name": "Гравити Фолз",
@@ -53,7 +83,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1599028/04954219-061a-4646-a7d6-054fdc34b053/orig",
         "id": "591929",
         "year": 2012,
-        "genres": "мультфильм, комедия, детектив, приключения, семейный, фантастика"
+        "genres": "мультфильм, комедия, детектив, приключения, семейный, фантастика",
+        "rating": 8.963,
+        "actors": "",
+        "country": "США",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "Человек-паук: Через вселенные",
@@ -61,7 +96,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1900788/64417bd3-838b-4910-a9f4-c278c509d568/orig",
         "id": "920265",
         "year": 2018,
-        "genres": "мультфильм, фантастика, фэнтези, боевик, комедия, приключения, семейный"
+        "genres": "мультфильм, фантастика, фэнтези, боевик, комедия, приключения, семейный",
+        "rating": 8.177,
+        "actors": "",
+        "country": "Канада, США",
+        "duration": 117,
+        "budget": 90000000
     },
     {
         "name": "Трое из Простоквашино",
@@ -69,7 +109,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1600647/6edf850a-19ea-4c25-8d74-d218eca3bd4a/orig",
         "id": "42326",
         "year": 1978,
-        "genres": "мультфильм, детский, короткометражка"
+        "genres": "мультфильм, детский, короткометражка",
+        "rating": 8.798,
+        "actors": "",
+        "country": "СССР",
+        "duration": 19,
+        "budget": "N/A"
     },
     {
         "name": "Гадкий я",
@@ -77,7 +122,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1900788/ae11375b-68ad-4bf7-98d2-127d83e09381/orig",
         "id": "432724",
         "year": 2010,
-        "genres": "мультфильм, фантастика, комедия, криминал, приключения, семейный"
+        "genres": "мультфильм, фантастика, комедия, криминал, приключения, семейный",
+        "rating": 7.794,
+        "actors": "",
+        "country": "США, Франция",
+        "duration": 95,
+        "budget": 69000000
     },
     {
         "name": "Миньоны",
@@ -85,7 +135,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1600647/a609cedc-7f75-4cb3-9e60-a5735c0c741b/orig",
         "id": "694051",
         "year": 2015,
-        "genres": "мультфильм, фантастика, комедия, криминал, приключения, семейный"
+        "genres": "мультфильм, фантастика, комедия, криминал, приключения, семейный",
+        "rating": 6.239,
+        "actors": "",
+        "country": "США, Франция, Мексика, Япония",
+        "duration": 91,
+        "budget": 74000000
     },
     {
         "name": "Босс-молокосос",
@@ -93,7 +148,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/4303601/963dbe30-0a49-4d8c-9f30-4c08c03ed806/orig",
         "id": "842567",
         "year": 2017,
-        "genres": "мультфильм, комедия, приключения, семейный"
+        "genres": "мультфильм, комедия, приключения, семейный",
+        "rating": 6.545,
+        "actors": "",
+        "country": "США",
+        "duration": 97,
+        "budget": 125000000
     },
     {
         "name": "Кунг-фу Панда",
@@ -101,7 +161,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1900788/a9c4698d-7eea-4fe8-8624-4c536c09f7fd/orig",
         "id": "103734",
         "year": 2008,
-        "genres": "мультфильм, фэнтези, боевик, комедия, приключения, семейный"
+        "genres": "мультфильм, фэнтези, боевик, комедия, приключения, семейный",
+        "rating": 7.812,
+        "actors": "",
+        "country": "США, Великобритания",
+        "duration": 91,
+        "budget": 130000000
     },
     {
         "name": "Винни Пух",
@@ -109,7 +174,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1599028/c5b6c0c7-f300-4c3d-99f2-cd09801ff43f/orig",
         "id": "45779",
         "year": 1969,
-        "genres": "мультфильм, детский, короткометражка"
+        "genres": "мультфильм, детский, короткометражка",
+        "rating": 8.771,
+        "actors": "",
+        "country": "СССР",
+        "duration": 11,
+        "budget": "N/A"
     },
     {
         "name": "Гадкий я 2",
@@ -117,7 +187,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/4303601/4030a2d4-7ef3-45bc-bdeb-7f0a072d2a13/orig",
         "id": "550910",
         "year": 2013,
-        "genres": "мультфильм, фантастика, комедия, криминал, приключения, семейный"
+        "genres": "мультфильм, фантастика, комедия, криминал, приключения, семейный",
+        "rating": 7.627,
+        "actors": "",
+        "country": "США, Франция, Япония",
+        "duration": 98,
+        "budget": 76000000
     },
     {
         "name": "Футурама",
@@ -125,7 +200,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1777765/44e4b345-2500-48f9-aaf1-b7e7918279d6/orig",
         "id": "79920",
         "year": 1999,
-        "genres": "мультфильм, фантастика, комедия, приключения"
+        "genres": "мультфильм, фантастика, комедия, приключения",
+        "rating": 8.192,
+        "actors": "",
+        "country": "США",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "Симпсоны",
@@ -133,7 +213,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/4303601/2fc554db-e5d1-475d-a5a3-4029b111b401/orig",
         "id": "77164",
         "year": 1989,
-        "genres": "мультфильм, комедия"
+        "genres": "мультфильм, комедия",
+        "rating": 8.404,
+        "actors": "",
+        "country": "США",
+        "duration": null,
+        "budget": 750000
     },
     {
         "name": "Ральф против интернета",
@@ -141,7 +226,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1599028/273336a7-6541-49e3-bab5-af59baa399c4/orig",
         "id": "988782",
         "year": 2018,
-        "genres": "мультфильм, комедия, приключения, семейный, фантастика"
+        "genres": "мультфильм, комедия, приключения, семейный, фантастика",
+        "rating": 7.388,
+        "actors": "",
+        "country": "Япония, США",
+        "duration": 112,
+        "budget": 175000000
     },
     {
         "name": "Зверопой 2",
@@ -149,7 +239,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/4303601/86bed0ee-6c1f-4a1d-85dd-1da7f194f97a/orig",
         "id": "1009142",
         "year": 2021,
-        "genres": "мультфильм, мюзикл, комедия, приключения, семейный"
+        "genres": "мультфильм, мюзикл, комедия, приключения, семейный",
+        "rating": 8.288,
+        "actors": "",
+        "country": "США, Япония, Франция",
+        "duration": 110,
+        "budget": 85000000
     },
     {
         "name": "Зверопой",
@@ -157,7 +252,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1704946/3499ebec-3259-4be6-9123-41a7d9aa9737/orig",
         "id": "821008",
         "year": 2016,
-        "genres": "мультфильм, мюзикл, комедия, семейный"
+        "genres": "мультфильм, мюзикл, комедия, семейный",
+        "rating": 7.391,
+        "actors": "",
+        "country": "Япония, США, Франция",
+        "duration": 108,
+        "budget": 75000000
     },
     {
         "name": "Суперсемейка",
@@ -165,7 +265,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1773646/df82213b-be04-4720-85ac-0f5e62c48e4c/orig",
         "id": "38903",
         "year": 2004,
-        "genres": "мультфильм, фантастика, семейный, боевик"
+        "genres": "мультфильм, фантастика, семейный, боевик",
+        "rating": 7.618,
+        "actors": "",
+        "country": "США, Япония",
+        "duration": 115,
+        "budget": 92000000
     },
     {
         "name": "Суперсемейка 2",
@@ -173,6 +278,11 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1900788/6d036080-e602-4004-a6c7-2bc78653c465/orig",
         "id": "839650",
         "year": 2018,
-        "genres": "мультфильм, фантастика, боевик, комедия, приключения, семейный"
+        "genres": "мультфильм, фантастика, боевик, комедия, приключения, семейный",
+        "rating": 7.41,
+        "actors": "",
+        "country": "США, Япония",
+        "duration": 118,
+        "budget": 200000000
     }
 ]

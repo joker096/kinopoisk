@@ -5,7 +5,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/6201401/e42e60bc-0772-4a3a-a24f-4218febf9386/orig",
         "id": "749374",
         "year": 2013,
-        "genres": "аниме, мультфильм, фантастика, драма, боевик, фэнтези"
+        "genres": "аниме, мультфильм, фантастика, драма, боевик, фэнтези",
+        "rating": 8.719,
+        "actors": "",
+        "country": "Япония",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "Тетрадь смерти",
@@ -13,7 +18,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1946459/0368a21d-64dd-4340-b097-205dc9512ba4/orig",
         "id": "406148",
         "year": 2006,
-        "genres": "аниме, мультфильм, фэнтези, триллер, драма, криминал, детектив"
+        "genres": "аниме, мультфильм, фэнтези, триллер, драма, криминал, детектив",
+        "rating": 8.575,
+        "actors": "",
+        "country": "Япония",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "Ванпанчмен",
@@ -21,7 +31,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1599028/51e91c45-75b3-439c-bcde-792f88cda34a/orig",
         "id": "942544",
         "year": 2015,
-        "genres": "аниме, мультфильм, боевик, комедия, фантастика"
+        "genres": "аниме, мультфильм, боевик, комедия, фантастика",
+        "rating": 8.368,
+        "actors": "",
+        "country": "Япония",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "Берсерк",
@@ -29,7 +44,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/6201401/a901c017-ce3c-42b0-b13c-5b1009a6bf6d/orig",
         "id": "257376",
         "year": 1997,
-        "genres": "аниме, мультфильм, фэнтези, боевик, драма"
+        "genres": "аниме, мультфильм, фэнтези, боевик, драма",
+        "rating": 8.597,
+        "actors": "",
+        "country": "Япония, Польша",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "Мальчик и птица",
@@ -37,7 +57,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/9784475/58a71698-ccb7-429c-84e7-890f5eb4aaef/orig",
         "id": "1071383",
         "year": 2023,
-        "genres": "аниме, мультфильм, драма, фэнтези, приключения"
+        "genres": "аниме, мультфильм, драма, фэнтези, приключения",
+        "rating": 7.658,
+        "actors": "",
+        "country": "Япония",
+        "duration": 124,
+        "budget": "N/A"
     },
     {
         "name": "Киберпанк: Бегущие по краю",
@@ -45,7 +70,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/4303601/203e9a72-242f-4424-a897-1a01d0fc3663/orig",
         "id": "2000102",
         "year": 2022,
-        "genres": "аниме, мультфильм, фантастика, боевик"
+        "genres": "аниме, мультфильм, фантастика, боевик",
+        "rating": 7.873,
+        "actors": "",
+        "country": "Япония, Польша, США",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "Акудама драйв",
@@ -53,7 +83,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/1898899/8751d06c-3d35-4297-8f90-e09f017c0670/orig",
         "id": "1381527",
         "year": 2020,
-        "genres": "аниме, мультфильм, боевик, фантастика"
+        "genres": "аниме, мультфильм, боевик, фантастика",
+        "rating": 7.673,
+        "actors": "",
+        "country": "Япония",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "Человек-бензопила",
@@ -61,7 +96,12 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/4303601/8205541e-8436-41f8-8dcf-720400965d5e/orig",
         "id": "2040161",
         "year": 2022,
-        "genres": "аниме, мультфильм, боевик, фэнтези, ужасы"
+        "genres": "аниме, мультфильм, боевик, фэнтези, ужасы",
+        "rating": 8.233,
+        "actors": "",
+        "country": "Япония",
+        "duration": null,
+        "budget": "N/A"
     },
     {
         "name": "Ван-Пис",
@@ -69,6 +109,11 @@
         "poster_url": "https://image.openmoviedb.com/kinopoisk-images/4774061/75f72ac1-1362-4a17-9693-461017555af4/orig",
         "id": "382731",
         "year": 1999,
-        "genres": "аниме, мультфильм, приключения, фэнтези, боевик"
+        "genres": "аниме, мультфильм, приключения, фэнтези, боевик",
+        "rating": 8.362,
+        "actors": "",
+        "country": "Япония",
+        "duration": null,
+        "budget": 10000000
     }
 ]

@@ -34,7 +34,21 @@ class MovieApp:
                         video_link = f"{PLAYER_LINK}?id={movie['id']}"  # Ссылка на видео просмотра
                         with col:
                             st.markdown(f"<a href='{video_link}' id='Movie_{i}'><img src='{poster_image}' width='100%'></a>", unsafe_allow_html=True)
-                            st.markdown(f"###### {movie['name']}", unsafe_allow_html=True)
+                            st.caption(
+                                f"###### {movie['name']}", 
+                                help=(
+                                    movie['description'] + '\n\n' + 
+                                    str(f'Год: {movie['year']}') + ' \/ ' + 
+                                    str(f'Рейтинг: {movie['rating']}') + ' \/ ' + 
+                                    str(f'Страна: {movie['country']}') + ' \/ ' +                                     
+                                    str(f'Продолжительность: {movie['duration']}') + ' \/ ' + 
+                                    str(f'Бюджет: {movie['budget']}') + '\n\n' +
+                                    movie['genres'] + '\n\n' + 
+                                    movie['actors']
+                                ),
+                                unsafe_allow_html=True
+                            )
+
                     except Exception as e:
                         st.error(f"Ошибка при отображении фильма: {e}")
 
@@ -42,7 +56,7 @@ class MovieApp:
         st.set_page_config(layout="wide")  
 
         with st.sidebar:
-            selected = option_menu(None, ["Movies", 'Series', 'Cartoons', 'Anime'],
+            selected = option_menu(None, ["Фильмы", 'Сериалы', 'Мультики', 'Аниме'],
                                     icons=['bi bi-film', 'bi bi-tv', 'bi bi-gitlab', 'bi bi-fire'], menu_icon="bar-chart-fill", default_index=0, styles={
                     "container": {"padding": "5!important", "background-color":'black'},
                     "icon": {"color": "white", "font-size": "18px"},
@@ -66,13 +80,13 @@ class MovieApp:
             # # Показать номер текущей страницы
             # st.text(f"Страница: {self.page_index + 1}")
 
-        if selected == 'Movies':
+        if selected == 'Фильмы':
             movies_data = self.load_movies_from_json("movies.json")
-        elif selected == 'Series':
+        elif selected == 'Сериалы':
             movies_data = self.load_movies_from_json("series.json")
-        elif selected == 'Cartoons':
+        elif selected == 'Мультики':
             movies_data = self.load_movies_from_json("cartoons.json")
-        elif selected == 'Anime':
+        elif selected == 'Аниме':
             movies_data = self.load_movies_from_json("anime.json")
         else:
             movies_data = self.load_movies_from_json("movies.json")
