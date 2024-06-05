@@ -71,15 +71,18 @@ class MovieApp:
             genre = st.selectbox("Выберите жанр", [None] + ["драма", "комедия", "боевик", "триллер", "фантастика", "фэнтези", "ужасы", "детектив", "мультфильм"])
             title = st.text_input("Введите название фильма")
 
-            # # Кнопки для пагинации
-            # if st.button("← Назад"):
-            #     if self.page_index > 0:
-            #         self.page_index -= 1
-            # if st.button("Вперед →"):
-            #     self.page_index += 1
+            # Кнопки для пагинации
+            cols = st.columns(5)
+            with cols[0]:
+                if st.button("←"):
+                    if self.page_index > 0:
+                        self.page_index -= 1
+            with cols[4]:
+                if st.button("→"):
+                    self.page_index += 1
 
-            # # Показать номер текущей страницы
-            # st.text(f"Страница: {self.page_index + 1}")
+            # Показать номер текущей страницы
+            st.text(f"Страница: {self.page_index + 1}")
 
         if selected == 'Фильмы':
             movies_data = self.load_movies_from_json("movies.json")
@@ -96,7 +99,7 @@ class MovieApp:
         filtered_movies = self.filter_movies(movies_data, year, genre, title)
         
         # Пагинация
-        movies_per_page = 120
+        movies_per_page = 24
         start_index = self.page_index * movies_per_page
         end_index = start_index + movies_per_page
         movies_to_display = filtered_movies[start_index:end_index]
