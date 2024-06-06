@@ -22,6 +22,7 @@ class MovieApp:
             movies = [movie for movie in movies if title.lower() in movie.get('name', '').lower()]
         return movies
 
+    @st.experimental_fragment
     def show_movies(self, movies_data):
         PLAYER_LINK = 'https://kinopoisk-watch-dsze5.ondigitalocean.app/player/'
 
