@@ -2,6 +2,10 @@ import streamlit as st
 import json
 from streamlit_option_menu import option_menu
 import datetime
+import os
+
+import base64
+from pathlib import Path
 
 class MovieApp:
     def __init__(self):
@@ -31,10 +35,35 @@ class MovieApp:
                 cols = st.columns(6)  # Используем шесть колонок в одной строке
                 for col, movie in zip(cols, movies_data[i:i+6]):
                     try:
-                        poster_image = movie['poster_url']
+                        # Получение текущей рабочей директории
+                        current_dir = os.getcwd()
+                        # Определение пути к директории с изображениями относительно текущей рабочей директории
+                        images_dir = os.path.join(current_dir, "images")
+                        # Определение пути к изображению
+                        # image_path = os.path.join(images_dir, f"{movie['id']}.jpg")
+                        
+                        # poster_image = movie['poster_url']
                         video_link = f"{PLAYER_LINK}?id={movie['id']}"  # Ссылка на видео просмотра
-                        with col:
-                            st.markdown(f"<a href='{video_link}' id='Movie_{i}'><img src='{poster_image}' width='100%'></a>", unsafe_allow_html=True)
+                        with col:                            
+                            image_path = Path(__file__).with_name("images").joinpath(f"{movie['id']}.jpg").relative_to(Path.cwd())
+                            # st.write(image_path)
+                            # st.image(str(image_path))
+                            # Чтение изображения в бинарном режиме
+                            with open(image_path, "rb") as f:
+                                image_bytes = f.read()
+
+                            # Преобразование изображения в base64
+                            image_base64 = base64.b64encode(image_bytes).decode()
+
+                            # Формирование HTML-кода для встраивания изображения
+                            html_code = f"<a href='{video_link}' id='Movie_1'><img src='data:image/jpeg;base64,{image_base64}' width='100%'></a>"
+
+                            # Отображение изображения с помощью st.markdown
+                            st.markdown(html_code, unsafe_allow_html=True)
+
+
+                            # st.image(poster_image, use_column_width='auto', output_format='JPEG', clamp=True)
+                            # st.markdown(f"<a href='{video_link}' id='Movie_{i}'><img src='{str(image_path)}' width='100%'></a>", unsafe_allow_html=True)
                             st.caption(
                                 f"###### {movie['name']}", 
                                 help=(
@@ -100,7 +129,7 @@ class MovieApp:
         filtered_movies = self.filter_movies(movies_data, year, genre, title)
         
         # Пагинация
-        movies_per_page = 24
+        movies_per_page = 240
         start_index = self.page_index * movies_per_page
         end_index = start_index + movies_per_page
         movies_to_display = filtered_movies[start_index:end_index]
