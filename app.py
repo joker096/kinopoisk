@@ -12,11 +12,13 @@ class MovieApp:
         self.page_index = 0  # Индекс текущей страницы
 
     # Функция для загрузки данных из JSON файла
+    @st.experimental_fragment
     def load_movies_from_json(self, file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             movies_data = json.load(file)
         return movies_data
 
+    @st.experimental_fragment
     def filter_movies(self, movies, year=None, genre=None, title=None):
         if year:
             movies = [movie for movie in movies if movie.get('year') == year]
@@ -56,7 +58,7 @@ class MovieApp:
                             image_base64 = base64.b64encode(image_bytes).decode()
 
                             # Формирование HTML-кода для встраивания изображения
-                            html_code = f"<a href='{video_link}' id='Movie_1'><img src='data:image/jpeg;base64,{image_base64}' width='100%'></a>"
+                            html_code = f"<a href='{video_link}' id='{movie['id']}'><img src='data:image/jpeg;base64,{image_base64}' width='100%'></a>"
 
                             # Отображение изображения с помощью st.markdown
                             st.markdown(html_code, unsafe_allow_html=True)

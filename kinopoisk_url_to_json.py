@@ -2,10 +2,23 @@ import os
 import requests
 import json
 from dotenv import load_dotenv
+from PIL import Image
+from io import BytesIO
 
 # Загрузка переменных окружения
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
+
+def save_image(image_url, movie_id):
+    response = requests.get(image_url)
+    if response.status_code == 200:
+        image = Image.open(BytesIO(response.content))
+        output_path = os.path.join("images", f"{movie_id}.jpg")
+        image.save(output_path)
+        return output_path
+    else:
+        print(f"Failed to download image. Status code: {response.status_code}")
+        return None
 
 def get_movie_details(movie_id):
     url = f"https://api.kinopoisk.dev/v1.4/movie/{movie_id}"
@@ -23,6 +36,10 @@ def get_movie_details(movie_id):
         name = data.get('name', 'N/A')
         description = data.get('description', 'N/A')
         poster_url = data.get('poster', {}).get('url', 'N/A')
+        if poster_url != 'N/A':
+            poster_path = save_image(poster_url, movie_id)
+        else:
+            poster_path = None
         year = data.get('year', 'N/A')
         genres = ', '.join([genre['name'] for genre in data.get('genres', [])])
         rating = data.get('rating', {}).get('kp', 'N/A')
@@ -60,7 +77,7 @@ def get_movies_details(movie_ids):
     return movies_details
 
 if __name__ == "__main__":
-    movie_ids = ['1219177', '693126', '395374', '81426', '586260', '405608', '692865', '602284', '1008408', '426053', '427878', '820599', '4445150', '1008491', '406186', '5078842', '1112702', '22399', '395901']
+    movie_ids = ['195524', '427122', '64021', '325598']
     
     movies_details = get_movies_details(movie_ids)
     
