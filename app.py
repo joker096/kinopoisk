@@ -67,17 +67,17 @@ class MovieApp:
                             # st.image(poster_image, use_column_width='auto', output_format='JPEG', clamp=True)
                             # st.markdown(f"<a href='{video_link}' id='Movie_{i}'><img src='{str(image_path)}' width='100%'></a>", unsafe_allow_html=True)
                             st.caption(
-                                f"###### {movie['name']}", 
+                                f"###### {movie['name']}",
                                 help=(
-                                    movie['description'] + '\n\n' + 
-                                    str(f'Год: {movie['year']}') + ' \/ ' + 
-                                    str(f'Рейтинг: {movie['rating']}') + ' \/ ' + 
-                                    str(f'Страна: {movie['country']}') + ' \/ ' +                                     
-                                    str(f'Продолжительность: {movie['duration']}') + ' ' + ' ' + 'мин.' + ' \/ ' + 
-                                    str(f'Бюджет: {movie['budget']}') + '\n\n' +
-                                    movie['genres'] + '\n\n' + 
-                                    str(f'Актёры: {movie['actors']}') + '\n\n' + 
-                                    str(f'Режиссёр: {movie['directors']}')
+                                    movie['description'] + '\n\n' +
+                                    str(f'Год: {movie["year"]}') + ' / ' +
+                                    str(f'Рейтинг: {movie["rating"]}') + ' / ' +
+                                    str(f'Страна: {movie["country"]}') + ' / ' +
+                                    str(f'Продолжительность: {movie["duration"]}') + ' мин. / ' +
+                                    str(f'Бюджет: {movie["budget"]}') + '\n\n' +
+                                    movie['genres'] + '\n\n' +
+                                    str(f'Актёры: {movie["actors"]}') + '\n\n' +
+                                    str(f'Режиссёр: {movie["directors"]}')
                                 ),
                                 unsafe_allow_html=True
                             )
