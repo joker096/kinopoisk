@@ -88,6 +88,8 @@ class MovieApp:
     def run(self):
         st.set_page_config(layout="wide", page_title="Фильмы Kinopoisk", page_icon="🎥")  
 
+        st.markdown('###### Фильмотека', unsafe_allow_html=True)
+
         with st.sidebar:
             selected = option_menu(None, ["Фильмы", 'Сериалы', 'Мультики', 'Аниме'],
                                     icons=['bi bi-film', 'bi bi-tv', 'bi bi-gitlab', 'bi bi-fire'], menu_icon="bar-chart-fill", default_index=0, styles={
@@ -138,6 +140,25 @@ class MovieApp:
 
         # Отображение фильмов
         self.show_movies(movies_to_display)
+
+        # Back to Top
+        @st.experimental_fragment
+        def generate_back_to_top_html(target_section_id):
+            st.divider()
+            return f'''
+                <a style="text-decoration: none;" href="#{target_section_id}">
+                    <div style="background-color: #00A6ED; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; text-align: center;">
+                        ⬆️
+                    </div>
+                </a>
+            '''
+
+         # Define the target section's ID
+        target_section_id = '742c3ac4'    
+
+        # Generate and display the HTML content
+        back_to_top_html = generate_back_to_top_html(target_section_id)
+        st.markdown(back_to_top_html, unsafe_allow_html=True) 
 
 if __name__ == "__main__":
     app = MovieApp()

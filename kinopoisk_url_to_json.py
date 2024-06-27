@@ -81,7 +81,7 @@ def get_movies_details(movie_ids):
     return movies_details
 
 if __name__ == "__main__":
-    movie_ids = ['104122', '522892','1309596','104938']
+    movie_ids = ['501333', '680824','4695','398239']
     
     movies_details = get_movies_details(movie_ids)
     
