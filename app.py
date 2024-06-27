@@ -86,7 +86,7 @@ class MovieApp:
                         st.error(f"Ошибка при отображении фильма: {e}")
 
     def run(self):
-        st.set_page_config(layout="wide")  
+        st.set_page_config(layout="wide", page_title="Фильмы Kinopoisk", page_icon="🎥")  
 
         with st.sidebar:
             selected = option_menu(None, ["Фильмы", 'Сериалы', 'Мультики', 'Аниме'],
