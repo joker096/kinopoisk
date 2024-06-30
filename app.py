@@ -127,7 +127,7 @@ class MovieApp:
             # Кнопка для перехода на сайт "cvr.name" 
             st.link_button("Code & Description", "https://cvr.name/streamlit-powered-movie-app/", type="primary", use_container_width=True)
  
-            # Кнопки для перехода на кошельки
+            # DONATE BUTTONS
             col1, col2 = st.columns(2)
 
             with col1:
@@ -135,13 +135,14 @@ class MovieApp:
                 st.link_button("LTC", "https://pay.cryptomus.com/wallet/9bda1c5d-5683-4c49-9c98-c6a2b2ae9498", type="secondary", use_container_width=True)
                 st.link_button("DOGE", "https://pay.cryptomus.com/wallet/3e92f2ef-d69b-438b-a237-ff0d9b264ece", type="secondary", use_container_width=True)
                 st.link_button("TRX", "https://pay.cryptomus.com/wallet/40e15597-f978-4ca3-9ceb-220503282004", type="secondary", use_container_width=True)
+                st.link_button("DAI (BEP20)", "https://pay.cryptomus.com/wallet/494e3610-185c-48af-b053-5092f4ac88d9", type="secondary", use_container_width=True)
 
             with col2:
                 st.link_button("USDT (TRC20)", "https://pay.cryptomus.com/wallet/c4003797-fc95-46ed-bedb-363f2243d09f", type="secondary", use_container_width=True)
                 st.link_button("BNB", "https://pay.cryptomus.com/wallet/dac50c9d-a827-4c26-b689-3a44c8517c95", type="secondary", use_container_width=True)
                 st.link_button("TON", "https://pay.cryptomus.com/wallet/0a76a081-7f74-4cc8-93c8-80e2b9c856d5", type="secondary", use_container_width=True)
                 st.link_button("MATIC", "https://pay.cryptomus.com/wallet/03602ae6-c750-49de-ba09-7829bfb763f8", type="secondary", use_container_width=True)
-                # st.link_button("DAI (BEP20)", "https://pay.cryptomus.com/wallet/494e3610-185c-48af-b053-5092f4ac88d9", type="secondary", use_container_width=True)
+                st.link_button("REGISTER", "https://cvr.name/aff-cryptomus", type="primary", use_container_width=True)
 
         if selected == 'Фильмы':
             movies_data = self.load_movies_from_json("movies.json")
