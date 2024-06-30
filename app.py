@@ -86,7 +86,7 @@ class MovieApp:
                         st.error(f"Ошибка при отображении фильма: {e}")
 
     def run(self):
-        st.set_page_config(layout="wide", page_title="Фильмы Kinopoisk", page_icon="🎥")  
+        st.set_page_config(layout="wide", page_title="Фильмы с Кинопоиск", page_icon="🎥")  
 
         st.markdown('###### Фильмотека', unsafe_allow_html=True)
 
@@ -101,9 +101,15 @@ class MovieApp:
             
             # Поля ввода для фильтрации фильмов
             current_year = datetime.datetime.now().year
-            year = st.selectbox("Выберите год", [None] + list(reversed(range(1900, current_year + 1))))
-            genre = st.selectbox("Выберите жанр", [None] + ["драма", "комедия", "боевик", "триллер", "фантастика", "фэнтези", "ужасы", "детектив", "мультфильм"])
-            title = st.text_input("Введите название фильма")
+            year = st.selectbox("", ["Выберите год"] + list(reversed(range(1950, current_year + 1))))
+            if year == 'Выберите год':
+                year = None
+
+            genre = st.selectbox("", ["Выберите жанр"] + ["драма", "комедия", "боевик", "триллер", "фантастика", "фэнтези", "ужасы", "детектив", "мультфильм"])
+            if genre == 'Выберите жанр':
+                genre = None
+
+            title = st.text_input("Поиск по названию")
 
             # Кнопки для пагинации
             cols = st.columns(5)
@@ -117,6 +123,9 @@ class MovieApp:
 
             # Показать номер текущей страницы
             st.text(f"Страница: {self.page_index + 1}")
+
+            # Кнопка для перехода на сайт "cvr.name" 
+            st.link_button("Code & Description", "https://cvr.name/streamlit-powered-movie-app/", type="primary", use_container_width=True)
 
         if selected == 'Фильмы':
             movies_data = self.load_movies_from_json("movies.json")
