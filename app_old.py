@@ -3,9 +3,9 @@ import json
 from streamlit_option_menu import option_menu
 import datetime
 import os
+
 import base64
 from pathlib import Path
-import requests
 
 class MovieApp:
     def __init__(self):
@@ -29,7 +29,8 @@ class MovieApp:
         return movies
 
     @st.experimental_fragment
-    def show_movies(self, movies_data):        
+    def show_movies(self, movies_data):
+        PLAYER_LINK = 'https://kinopoisk-watch-dsze5.ondigitalocean.app/player/'
 
         if movies_data:
             for i in range(0, len(movies_data), 6):  # Обработка по 6 фильмов за раз
@@ -43,7 +44,9 @@ class MovieApp:
                         # Определение пути к изображению
                         # image_path = os.path.join(images_dir, f"{movie['id']}.jpg")
                         
-                        with col:
+                        # poster_image = movie['poster_url']
+                        video_link = f"{PLAYER_LINK}?id={movie['id']}"  # Ссылка на видео просмотра
+                        with col:                            
                             image_path = Path(__file__).with_name("images").joinpath(f"{movie['id']}.jpg").relative_to(Path.cwd())
                             # st.write(image_path)
                             # st.image(str(image_path))
@@ -55,25 +58,25 @@ class MovieApp:
                             image_base64 = base64.b64encode(image_bytes).decode()
 
                             # Формирование HTML-кода для встраивания изображения
-                            html_code = f"<a href='{movie["tapeop_url"]}'><img src='data:image/jpeg;base64,{image_base64}' width='100%'></a>"
+                            html_code = f"<a href='{video_link}' id='{movie['id']}'><img src='data:image/jpeg;base64,{image_base64}' width='100%'></a>"
 
                             # Отображение изображения с помощью st.markdown
                             st.markdown(html_code, unsafe_allow_html=True)
 
                             # Ограничиваем длину описания до 300 символов
-                            # movie['description'] = movie['description'][:300] + '...' if len(movie['description']) > 300 else movie['description']
+                            #movie['description'] = movie['description'][:300] + '...' if len(movie['description']) > 300 else movie['description']
 
                             # st.image(poster_image, use_column_width='auto', output_format='JPEG', clamp=True)
                             # st.markdown(f"<a href='{video_link}' id='Movie_{i}'><img src='{str(image_path)}' width='100%'></a>", unsafe_allow_html=True)
                             st.caption(
                                 f"###### {movie['name']}",
                                 help=(
-                                    str(f'**{movie["description"]}**') + '\n\n' +
+                                    str(f'**{movie["description"]}**') + '\n\n' + 
                                     str(f'Год: {movie["year"]}') + ' / ' +
                                     str(f'Рейтинг: {movie["rating"]}') + ' / ' +
                                     str(f'Страна: {movie["country"]}') + ' / ' +
-                                    (str(f'Продолжительность: {movie["duration"]}') + ' мин. / ' if movie["duration"] else '') +
-                                    str(f'{movie['genres']}') + '\n\n' +
+                                    (str(f'Продолжительность: {movie["duration"]}') + ' мин. / ' if movie["duration"] else '') +                                    
+                                    str(f'{movie['genres']}') + '\n\n' + 
                                     str(f'Актёры: {movie["actors"]}') + '\n\n' +
                                     str(f'Режиссёр: {movie["directors"]}')
                                 ),
@@ -84,7 +87,7 @@ class MovieApp:
                         st.error(f"Ошибка при отображении фильма: {e}")
 
     def run(self):
-        st.set_page_config(layout="wide", page_title="Фильмы с Кинопоиск", page_icon="🎥")
+        st.set_page_config(layout="wide", page_title="Фильмы с Кинопоиск", page_icon="🎥")  
 
         st.markdown('###### Фильмотека', unsafe_allow_html=True)
 
@@ -96,7 +99,7 @@ class MovieApp:
                     "nav-link": {"color":"white", "font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "blue"},
                     "nav-link-selected": {"background-color": "#02ab21"},
                 })
-
+            
             # Поля ввода для фильтрации фильмов
             current_year = datetime.datetime.now().year
             year = st.selectbox("", ["Выберите год"] + list(reversed(range(1950, current_year + 1))))
@@ -109,9 +112,22 @@ class MovieApp:
 
             title = st.text_input("Поиск по названию")
 
-            # Кнопка для перехода на сайт "cvr.name"
-            st.link_button("Code & Description", "https://cvr.name/streamlit-powered-movie-app/", type="primary", use_container_width=True)
+            # # Кнопки для пагинации
+            # cols = st.columns(5)
+            # with cols[0]:
+            #     if st.button("←"):
+            #         if self.page_index > 0:
+            #             self.page_index -= 1
+            # with cols[4]:
+            #     if st.button("→"):
+            #         self.page_index += 1
 
+            # # Показать номер текущей страницы
+            # st.text(f"Страница: {self.page_index + 1}")
+
+            # Кнопка для перехода на сайт "cvr.name" 
+            st.link_button("Code & Description", "https://cvr.name/streamlit-powered-movie-app/", type="primary", use_container_width=True)
+ 
             # DONATE BUTTONS
             col1, col2 = st.columns(2)
 
@@ -142,7 +158,7 @@ class MovieApp:
 
         # Применение фильтров
         filtered_movies = self.filter_movies(movies_data, year, genre, title)
-
+        
         # Пагинация
         movies_per_page = 240
         start_index = self.page_index * movies_per_page
@@ -165,11 +181,11 @@ class MovieApp:
             '''
 
          # Define the target section's ID
-        target_section_id = '742c3ac4'
+        target_section_id = '742c3ac4'    
 
         # Generate and display the HTML content
         back_to_top_html = generate_back_to_top_html(target_section_id)
-        st.markdown(back_to_top_html, unsafe_allow_html=True)
+        st.markdown(back_to_top_html, unsafe_allow_html=True) 
 
 if __name__ == "__main__":
     app = MovieApp()
