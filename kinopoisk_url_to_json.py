@@ -3,7 +3,7 @@ import requests
 import json
 from dotenv import load_dotenv
 from io import BytesIO
-from PIL import Image, ImageFilter
+from PIL import Image
 
 # Загрузка переменных окружения
 load_dotenv()
@@ -44,14 +44,6 @@ def get_tapeop_id_from_api(kinopoisk_id):
             raise ValueError(f"Идентификатор Кинопоиска {kinopoisk_id} не найден в API")
     else:
         raise ValueError(f"Ошибка при получении идентификатора Tape Operator для ID {kinopoisk_id}: {response.status_code}")
-    
-def get_movie_details(movie_ids):
-    # Если movie_ids - это список, обрабатываем каждый идентификатор
-    if isinstance(movie_ids, list):
-        return get_movie_details(movie_ids)
-    # Если это одиночный id, обрабатываем как один фильм
-    else:
-        return get_movie_details([movie_ids])  # Обернем id в список
 
 def get_movie_details(movie_id):
     url = f"https://api.kinopoisk.dev/v1.4/movie/{movie_id}"
@@ -101,6 +93,16 @@ def get_movie_details(movie_id):
     else:
         raise Exception(f"Ошибка при получении данных для фильма с id {movie_id}: {response.status_code} - {response.text}")
 
+def get_movies_details(movie_ids):
+    movies_details = []
+    for movie_id in movie_ids:
+        try:
+            movie_details = get_movie_details(movie_id)
+            movies_details.append(movie_details)
+        except Exception as e:
+            print(f"Error processing movie ID {movie_id}: {e}")
+    return movies_details
+
 if __name__ == "__main__":
     # Для одного фильма
     movie_id = '70922'
@@ -109,15 +111,14 @@ if __name__ == "__main__":
     # movie_ids = ['70922', '123456', '7891011']
     
     # Проверка для одного фильма
-    movies_details = get_movie_details(movie_id)
+    movie_details = get_movie_details(movie_id)
     
     # Либо можно передать несколько ID
-    # movies_details = get_movie_details(movie_ids)
+    # movies_details = get_movies_details(movie_ids)
     
     # Сохранение всех данных в JSON файл
     with open('movies_details.json', 'w', encoding='utf-8') as f:
-        json.dump(movies_details, f, ensure_ascii=False, indent=4)
+        json.dump(movie_details, f, ensure_ascii=False, indent=4)
 
     # Вывод данных
-    print(json.dumps(movies_details, ensure_ascii=False, indent=4))
-
+    print(json.dumps(movie_details, ensure_ascii=False, indent=4))
