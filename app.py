@@ -55,7 +55,7 @@ class MovieApp:
                             image_base64 = base64.b64encode(image_bytes).decode()
 
                             # Формирование HTML-кода для встраивания изображения
-                            html_code = f"<a href='{movie["tapeop_url"]}'><img src='data:image/jpeg;base64,{image_base64}' width='100%'></a>"
+                            html_code = f"<a href=\"{movie['tapeop_url']}\"><img src=\"data:image/jpeg;base64,{image_base64}\" width='100%'></a>"
 
                             # Отображение изображения с помощью st.markdown
                             st.markdown(html_code, unsafe_allow_html=True)
