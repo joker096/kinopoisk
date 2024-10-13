@@ -105,16 +105,18 @@ def get_movies_details(movie_ids):
 
 if __name__ == "__main__":
     # Для одного фильма
-    movie_id = '70922'
+    # movie_id = '70922'
+
+    # Проверка для одного фильма
+    # movie_details = get_movie_details(movie_id)
+
+
     
     # Для нескольких фильмов
-    # movie_ids = ['70922', '123456', '7891011']
-    
-    # Проверка для одного фильма
-    movie_details = get_movie_details(movie_id)
+    movie_ids = ['6303281', '4860213']  
     
     # Либо можно передать несколько ID
-    # movies_details = get_movies_details(movie_ids)
+    movie_details = get_movies_details(movie_ids)
     
     # Сохранение всех данных в JSON файл
     with open('movies_details.json', 'w', encoding='utf-8') as f:
