@@ -113,7 +113,7 @@ if __name__ == "__main__":
 
     
     # Для нескольких фильмов
-    movie_ids = ['6303281', '4860213']  
+    movie_ids = ['1073122', '5405057']  
     
     # Либо можно передать несколько ID
     movie_details = get_movies_details(movie_ids)
