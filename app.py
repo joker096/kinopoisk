@@ -19,13 +19,15 @@ class MovieApp:
         return movies_data
 
     @st.experimental_fragment
-    def filter_movies(self, movies, year=None, genre=None, title=None):
+    def filter_movies(self, movies, year=None, genre=None, title=None, actor=None):
         if year:
             movies = [movie for movie in movies if movie.get("year") == year]
         if genre:
             movies = [movie for movie in movies if genre in movie.get("genres", "").split(", ")]
         if title:
             movies = [movie for movie in movies if title.lower() in movie.get("name", "").lower()]
+        if actor:
+            movies = [movie for movie in movies if actor.lower() in movie.get("actors", "").lower()]
         return movies
 
     @st.experimental_fragment
@@ -50,15 +52,14 @@ class MovieApp:
 
                             st.caption(
                                 f"###### {movie['name']}",
-                                help=(
-                                    f"**{movie['description']}**" + "\n\n" +
-                                    f"Год: {movie['year']}" + " / " +
-                                    f"Рейтинг: {movie['rating']}" + " / " +
-                                    f"Страна: {movie['country']}" + " / " +
-                                    (f"Продолжительность: {movie['duration']}" + " мин. / " if movie["duration"] else "") +
-                                    f"{movie['genres']}" + "\n\n" +
-                                    f"Актёры: {movie['actors']}" + "\n\n" +
-                                    f"Режиссёр: {movie['directors']}"
+                                help=(f"**{movie['description']}**" + "\n\n" +
+                                      f"Год: {movie['year']}" + " / " +
+                                      f"Рейтинг: {movie['rating']}" + " / " +
+                                      f"Страна: {movie['country']}" + " / " +
+                                      (f"Продолжительность: {movie['duration']}" + " мин. / " if movie["duration"] else "") +
+                                      f"{movie['genres']}" + "\n\n" +
+                                      f"Актёры: {movie['actors']}" + "\n\n" +
+                                      f"Режиссёр: {movie['directors']}"
                                 ),
                                 unsafe_allow_html=True
                             )
@@ -91,26 +92,11 @@ class MovieApp:
                 genre = None
 
             title = st.text_input("Поиск по названию")
+            actor = st.text_input("Поиск по актёру")  # Добавлено поле для поиска по актёру
 
             st.link_button("Code & Description", "https://cvr.name/streamlit-powered-movie-app/", type="primary", use_container_width=True)
 
             components.iframe("https://nowpayments.io/embeds/donation-widget?api_key=8Y7S20R-2AAMZRA-MH6Y1GY-PVKA9FV", height=623)
-
-            # col1, col2 = st.columns(2)
-
-            # with col1:
-            #     st.link_button("BTC", "https://pay.cryptomus.com/wallet/3b32a73a-5056-4367-998f-bca31573b8ba", type="secondary", use_container_width=True)
-            #     st.link_button("LTC", "https://pay.cryptomus.com/wallet/9bda1c5d-5683-4c49-9c98-c6a2b2ae9498", type="secondary", use_container_width=True)
-            #     st.link_button("DOGE", "https://pay.cryptomus.com/wallet/3e92f2ef-d69b-438b-a237-ff0d9b264ece", type="secondary", use_container_width=True)
-            #     st.link_button("TRX", "https://pay.cryptomus.com/wallet/40e15597-f978-4ca3-9ceb-220503282004", type="secondary", use_container_width=True)
-            #     st.link_button("DAI (BEP20)", "https://pay.cryptomus.com/wallet/494e3610-185c-48af-b053-5092f4ac88d9", type="secondary", use_container_width=True)
-
-            # with col2:
-            #     st.link_button("USDT (TRC20)", "https://pay.cryptomus.com/wallet/c4003797-fc95-46ed-bedb-363f2243d09f", type="secondary", use_container_width=True)
-            #     st.link_button("BNB", "https://pay.cryptomus.com/wallet/dac50c9d-a827-4c26-b689-3a44c8517c95", type="secondary", use_container_width=True)
-            #     st.link_button("TON", "https://pay.cryptomus.com/wallet/0a76a081-7f74-4cc8-93c8-80e2b9c856d5", type="secondary", use_container_width=True)
-            #     st.link_button("MATIC", "https://pay.cryptomus.com/wallet/03602ae6-c750-49de-ba09-7829bfb763f8", type="secondary", use_container_width=True)
-            #     st.link_button("REGISTER", "https://cvr.name/aff-cryptomus", type="primary", use_container_width=True)
 
         if selected == "Фильмы":
             movies_data = self.load_movies_from_json("movies.json")
@@ -123,7 +109,7 @@ class MovieApp:
         else:
             movies_data = self.load_movies_from_json("movies.json")
 
-        filtered_movies = self.filter_movies(movies_data, year, genre, title)
+        filtered_movies = self.filter_movies(movies_data, year, genre, title, actor)  # Передача actor в метод фильтрации
 
         movies_per_page = 240
         start_index = self.page_index * movies_per_page
